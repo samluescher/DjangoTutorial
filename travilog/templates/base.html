@@ -1,0 +1,27 @@
+<html>
+	<head>
+		<title>{{ title }}</title>
+
+		<style type="text/css">
+			.nav-main {
+				margin: 0;
+				padding: 0;
+			}
+			.nav-main li {
+				display: inline-block;
+				margin-right: 1em;
+			}
+		</style>
+
+	</head>
+	<body>
+		<h1>Travilog!</h1>
+		<ul class="nav-main">
+			{% block nav_items %}
+		 	{% endblock %}
+			<li>About us</li>
+		</ul>
+		{% block content %}
+		{% endblock %}
+	</body>
+</html>
