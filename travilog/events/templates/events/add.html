@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block nav_items %}
+	<li><a href="{% url events.views.index %}">Events list</a></li>
+	<li><strong>Add event</strong></li>
+{% endblock %}
+
+{% block content %}
+<h2>Add event</h2>
+
+<form method="POST">
+{% csrf_token %}
+
+{% for field in form %}
+	<p>
+		{{ field.errors }}
+		{{ field.label }}
+		{{ field }}
+	</p>
+{% endfor %}
+
+<input type="submit" value="Send" /> 
+
+</form>
+{% endblock %}
